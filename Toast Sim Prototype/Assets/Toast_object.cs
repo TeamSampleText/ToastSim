@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+var score = 0;
+
 public class Toast_object : MonoBehaviour {
 
+
 	void OnMouseDown() {
-		print ("qinnningsnidgnisnd");
+		score++;
+		print ("Score": score);
 	}
 
 	// Use this for initialization
