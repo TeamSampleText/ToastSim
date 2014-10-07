@@ -2,8 +2,8 @@
 using System.Collections;
 
 
-
 public class main : MonoBehaviour {
+
 	int toastwait = 3;
 
 	// Use this for initialization
@@ -21,9 +21,9 @@ public class main : MonoBehaviour {
 	IEnumerator  timer() {
 
 
-		for (int toast = 0; toast < 5; toast++) {
-			print ("Toast: " + toast);
-			print ("Calum a is a huge cock");
+		for (int timer = 0; timer < 1; timer++) {
+			print ("Timer: " + timer);
+		
 
 			yield return new WaitForSeconds(toastwait);
 		}
