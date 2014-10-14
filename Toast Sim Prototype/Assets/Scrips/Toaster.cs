@@ -4,14 +4,10 @@ using System.Collections;
 public class Toaster : MonoBehaviour
 {
 	public Transform Toast;
-	public Transform Toaster_obj;
+	private float toastX = 1;
+	private float toastY = 2;
 
-	private int toastcount = 0;
-	private float toastX = 0;
-	private float toastY = 0.7f;
-	private GameObject instantiatedToast;
-
-	bool toasterclicked = false;
+		bool toasterclicked = false;
 	
 		// Use this for initialization
 		void Start ()
@@ -25,18 +21,16 @@ public class Toaster : MonoBehaviour
 		void Update ()
 		{
 		if (Input.GetMouseButtonUp (0)) {
-					//	toasterclicked = false;
+						toasterclicked = false;
 						print ("Is toaster been clicked? " + toasterclicked);
 				}
 		
 
 		if (toasterclicked == true) {
-			toastcount++; 
-
+		
 			Instantiate(Toast, new Vector3(toastX,toastY,0), Quaternion.identity);
 			print("Toast made");
 			toasterclicked = false;
-		
 
 			                        }
 
