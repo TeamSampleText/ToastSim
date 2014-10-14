@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Toast_object : MonoBehaviour {
 
-	int score = 0;
+public class Toast_object : MonoBehaviour {
+	public GUIText score_txt;
+	public GameObject toast;
+	
 
 	void OnMouseDown() {
+		main.score ++;
+		UpdateScore ();
+		print ("Current Score: " + main.score);
+		Destroy (gameObject);
+	//	DestroyImmediate (toast, true);
 
-		score++;
-		print ("Current Score: " + score);
 	}
 
 	// Use this for initialization
@@ -18,10 +23,12 @@ public class Toast_object : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		//score_txt.text = "Score " + score;
 	}
 
-
+	void UpdateScore() {
+		score_txt.text = "Score " + main.score;
+	}
 
 
 }

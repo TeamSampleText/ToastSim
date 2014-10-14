@@ -2,8 +2,9 @@
 using System.Collections;
 
 
-public class main : MonoBehaviour {
 
+public class main : MonoBehaviour {
+	public static int score = 0;
 	int toastwait = 3;
 
 	// Use this for initialization
@@ -29,6 +30,8 @@ public class main : MonoBehaviour {
 		}
 
 	}
+
+
 
 
 }
