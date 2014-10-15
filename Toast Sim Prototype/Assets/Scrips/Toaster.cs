@@ -4,16 +4,15 @@ using System.Collections;
 public class Toaster : MonoBehaviour
 {
 	public Transform Toast;
-	public Transform Toaster_obj;
+	public GameObject Toaster_obj;
 	public static bool toasterclicked = false;
 
 
-	private int toastcount = 0;
-	private float toastX = 0;
-	private float toastY = 0.7f;
-
-
+	public static int toastcount = 0;
+	public static float ToasterX = 0;
+	public static float ToasterY = 0;
 		// Use this for initialization
+
 		void Start ()
 		{
 

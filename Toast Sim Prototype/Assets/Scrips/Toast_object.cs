@@ -5,7 +5,6 @@ using System.Collections;
 public class Toast_object : MonoBehaviour {
 	public GUIText score_txt;
 	public GameObject toast;
-	
 
 	void OnMouseDown() {
 		main.score ++;
@@ -27,7 +26,7 @@ public class Toast_object : MonoBehaviour {
 	}
 
 	void UpdateScore() {
-		score_txt.text = "Score " + main.score;
+		score_txt.text = "Score " + main.score + "/" + Toaster.toastcount;
 	}
 
 
