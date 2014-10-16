@@ -34,7 +34,13 @@ public class main : MonoBehaviour {
 		if (Toast_object.toastClicked == true) {
 			//	print (currentToast.transform.position.y);
 		
-				//if(toast_obj.transform.position.y>Toaster_obj.transform.localPosition.y+1)
+				if(toast_obj.transform.position.y>Toaster_obj.transform.localPosition.y+1)
+				//CCheck where toast is in world
+				
+				if (toast_obj.transform.position.y < 0.4f)
+				//Do toasty shit
+				
+				
 				
 				score+=3;
 				
@@ -70,8 +76,19 @@ public class main : MonoBehaviour {
 			print("X pos: "+Toaster_obj.transform.position.x + "y pos: "+ Toaster.ToasterY);
 			Toaster.toasterclicked = false;
 			
+			GameObject newToast;
+			newToast = Instantiate(Toast, new Vector3(toastX,toastY), Quaternion.identity) as GameObject;
+			newToast.tag = "toast";
 			
-			Instantiate(Toast, new Vector3(toastX,toastY), Quaternion.identity) ;
+			GameObject RandomTestToaster;
+			RandomTestToaster = GameObject.FindGameObjectWithTag("toaster");
+			
+			
+			//PROTIP: Accessing variables in other scripts
+			//First, create a variable to old script e.g
+			Toast_object script = Toast_object.GetComponent<Toast_object>();
+				script.
+			
 			//toast_obj.gameObject.tag = "Toast "+ toastCount;
 			//print("Toast made " + Toast.tag);
 			timerToast = 0;

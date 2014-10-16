@@ -11,12 +11,14 @@ public class Toaster : MonoBehaviour
 	public static int toastcount = 0;
 	public static float ToasterX = 0;
 	public static float ToasterY = 0;
+	public float toasterHeight = 0;
 		// Use this for initialization
 
 		void Start ()
 		{
 
 		print ("Is toaster been clicked? " + toasterclicked);
+		toasterHeight = Toaster_obj.renderer.bounds.y;
 	
 		}
 	
