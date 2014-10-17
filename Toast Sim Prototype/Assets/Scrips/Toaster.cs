@@ -18,7 +18,7 @@ public class Toaster : MonoBehaviour
 		{
 
 		print ("Is toaster been clicked? " + toasterclicked);
-		toasterHeight = Toaster_obj.renderer.bounds.y;
+//		toasterHeight = Toaster_obj.renderer.bounds.y;
 	
 		}
 	

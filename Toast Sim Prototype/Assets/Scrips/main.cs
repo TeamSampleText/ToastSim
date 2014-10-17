@@ -10,6 +10,7 @@ public class main : MonoBehaviour {
 	public GameObject Toaster_obj; 
 	public GameObject toast_obj;
 	private float toastX = 0;
+	private float toastZ = 0;
 	private float toastY = 0;
 	private int toastwait = 1;
 	private int timerToast = 0;
@@ -29,7 +30,9 @@ public class main : MonoBehaviour {
 		
 		StartCoroutine(timer());
 		toastX = 0;
-		toastY = 0.7f;
+		toastY = 1.1f;
+		toastZ = 0;
+
 		
 		if (Toast_object.toastClicked == true) {
 			//	print (currentToast.transform.position.y);
@@ -77,17 +80,17 @@ public class main : MonoBehaviour {
 			Toaster.toasterclicked = false;
 			
 			GameObject newToast;
-			newToast = Instantiate(Toast, new Vector3(toastX,toastY), Quaternion.identity) as GameObject;
-			newToast.tag = "toast";
+			newToast = Instantiate(Toast, new Vector3(toastX,toastY,toastZ-0.2f), Quaternion.identity) as GameObject;
+//			newToast.tag = "toast";
 			
 			GameObject RandomTestToaster;
-			RandomTestToaster = GameObject.FindGameObjectWithTag("toaster");
+//			RandomTestToaster = GameObject.FindGameObjectWithTag("toaster");
 			
 			
 			//PROTIP: Accessing variables in other scripts
 			//First, create a variable to old script e.g
-			Toast_object script = Toast_object.GetComponent<Toast_object>();
-				script.
+//			Toast_object script = Toast_object.GetComponent<Toast_object>();
+	//			script.
 			
 			//toast_obj.gameObject.tag = "Toast "+ toastCount;
 			//print("Toast made " + Toast.tag);
