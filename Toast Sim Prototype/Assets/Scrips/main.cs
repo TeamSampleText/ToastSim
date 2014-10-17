@@ -1,10 +1,52 @@
-﻿using UnityEngine;
+﻿// What we need to do:
+//
+// 1. Score
+/////////////////// 1.1 add to score
+// 1.2 location depenent score
+/////////////////// 1.3 remove score purches 
+// 1.4 Make score not reset when move from main screen to upgrades
+//
+// 2. Need toaster Model 
+// 2.1 Murder Harry
+// 
+// 3. Phyics !
+// 3.1 Toast to pop when toasted 
+// 3.2 Toaster Plunger to go down when toasting
+// 
+// 4. Basic upgrade / upgrade screen
+// 4.1 Make upgrades affet the game
+// 
+// 5.Get backgrounds for images
+// 
+// 6. Proper UI
+// 6.1 Change pointer when over toast?
+// 6.2 Tell the player whats going on ie timer, ect
+//  
+// 7. Materials 
+// 
+// 8. Sounds
+//
+// 9. no
+//
+// 10. Start up of game
+// 10.1 Splash screen
+// 10.2 start screen
+// 10.3 Name entering ? 
+// 
+// 11. BREAD !!!!!!!
+// 11.1 move bread to le toaster 
+//
+// 12. Kill Bill
+
+
+
+using UnityEngine;
 using System.Collections;
 
 
 
 public class main : MonoBehaviour {
-	public int score = 0;
+	public static int score  = 000000;
 	public Transform Toast;
 	
 	public GameObject Toaster_obj; 
@@ -17,17 +59,20 @@ public class main : MonoBehaviour {
 	private int testtime = 2 ;
 	private bool toastMake = false;
 	public  GUIText score_txt;
+	private int toastCount = 0;
 	// Use this for initialization
 	void Start () {
 		
 		//print ("Starting: " + Time.time);
 		
-		
+		score_txt.text = "Score: " + score;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		TestremoveScore ();
+		TestAddScore ();
 		StartCoroutine(timer());
 		toastX = 0;
 		toastY = 1.1f;
@@ -36,17 +81,15 @@ public class main : MonoBehaviour {
 		
 		if (Toast_object.toastClicked == true) {
 			//	print (currentToast.transform.position.y);
-		
-				if(toast_obj.transform.position.y>Toaster_obj.transform.localPosition.y+1)
-				//CCheck where toast is in world
-				
-				if (toast_obj.transform.position.y < 0.4f)
+
+			if (tag.Contains("toast") ){
 				//Do toasty shit
-				
-				
-				
-				score+=3;
-				
+				if(gameObject.transform.position.y <= 0.4f){
+					score+=3;
+				}
+			}else{
+				score++;
+			}
 
 			
 			Toast_object.toastClicked = false;
@@ -78,10 +121,10 @@ public class main : MonoBehaviour {
 			
 			print("X pos: "+Toaster_obj.transform.position.x + "y pos: "+ Toaster.ToasterY);
 			Toaster.toasterclicked = false;
-			
+			toastCount++;
 			GameObject newToast;
 			newToast = Instantiate(Toast, new Vector3(toastX,toastY,toastZ-0.2f), Quaternion.identity) as GameObject;
-//			newToast.tag = "toast";
+			//newToast.tag = "toast" + toastCount ;
 			
 			GameObject RandomTestToaster;
 //			RandomTestToaster = GameObject.FindGameObjectWithTag("toaster");
@@ -99,14 +142,50 @@ public class main : MonoBehaviour {
 		}
 		
 	}
-	
-	
-	void UpdateScore() {
-		
+
+	void TestremoveScore()
+	{
+		if (Input.GetKeyDown(KeyCode.Return)){
+			score--;		
+			score_txt.text = "Score: " + score ;
+		}
 	}
-	
-	
+	void TestAddScore()
+	{
+		if (Input.GetKeyDown(KeyCode.Space)){
+			score++;		
+			score_txt.text = "Score: " + score ;
+		}
+	}
+	void OnGUI()
+	{
+		const int buttonWidth = 84;
+		const int buttonHeight = 60;
+		
+		// Determine the button's place on screen
+		// Center in X, 2/3 of the height in Y
+		Rect buttonRect = new Rect(
+			Screen.width / 2 - (buttonWidth / 2),
+			(2 * Screen.height / 3) - (buttonHeight / 2),
+			buttonWidth,
+			buttonHeight
+			);
+		
+		// Draw a button to start the game
+		if(GUI.Button(buttonRect,"Upgrades"))
+		{
+			// On Click, load the first level.
+			// "Stage1" is the name of the first scene we created.
+			Application.LoadLevel("upgrademenu");
+		}
+
+
+
+	}
 }
+
+
+
 
 
 
