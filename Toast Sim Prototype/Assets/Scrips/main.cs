@@ -4,7 +4,7 @@
 /////////////////// 1.1 add to score
 // 1.2 location dependent score
 /////////////////// 1.3 remove score after purchases 
-///////////////////1.4 Make score not reset when move from main screen to upgrades
+/////////////////// 1.4 Make score not reset when move from main screen to upgrades
 //
 // 2. Need toaster Model 
 // 2.1 Murder Harry
@@ -13,7 +13,7 @@
 // 3.1 Toast to pop when toasted 
 // 3.2 Toaster Plunger to go down when toasting
 // 
-// 4. Basic upgrades / upgrade screen
+/////////////////// 4. Basic upgrades / upgrade screen
 // 4.1 Make upgrades affect the game
 // 
 // 5.Get backgrounds for images
@@ -26,17 +26,14 @@
 // 
 // 8. Sounds
 //
-// 9. no
-//
-// 10. Start up of game
-// 10.1 Splash screen
-// 10.2 start screen
-// 10.3 Name entering ? 
+// 9. Start up of game
+// 9.1 Splash screen
+// 9.2 start screen
+// 9.3 Name entering ? 
 // 
-// 11. BREAD !!!!!!!
-// 11.1 move bread to le toaster 
+// 10. BREAD !!!!!!!
+// 10.1 move bread to le toaster 
 //
-// 12. Kill Bill
 
 
 
@@ -60,6 +57,9 @@ public class main : MonoBehaviour {
 	private bool toastMake = false;
 	public  GUIText score_txt;
 	private int toastCount = 0;
+
+
+	private int totalToast = 0 ;
 	// Use this for initialization
 	void Start () {
 		
@@ -86,9 +86,11 @@ public class main : MonoBehaviour {
 				//Do toasty shit
 				if(gameObject.transform.position.y <= 0.4f){
 					score+=3;
+					totalToast++;
 				}
 			}else{
 				score++;
+				totalToast++;
 			}
 
 			
