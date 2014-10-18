@@ -33,8 +33,16 @@ public class upgrademenu : MonoBehaviour
 		const int extraToasterCost = 7500;
 		const int flamethrowerCost = 20000;
 
-
-
+		bool silencerEquipped = false ;
+		bool ACOGEquipped = false;
+		bool redDotSightEquipped = false;
+		bool extendedSlotsEquipped = false;
+		bool hotterElementEquipped = false;
+		bool diamondCamoEquipped = false;
+		bool whitePartyHatEquipped = false;
+		bool powerfulSpringEquipped = false;
+		bool extraToasterEquipped = false;
+		bool flamethrowerEquipped = false;
 
 
 		if (GUI.Button (new Rect (Screen.width - (backbtnWidth + backbtnSpacer),Screen.height - (backbtnHeight + backbtnSpacer), backbtnWidth, backbtnHeight), "Back")) {
@@ -42,63 +50,73 @@ public class upgrademenu : MonoBehaviour
 			Application.LoadLevel("toastsimproto1");
 		}
 
-		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowOneBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Silencer")) && (main.score >= silencerCost)) {
+		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowOneBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Silencer \n 10 Toast")) && (main.score >= silencerCost)) {
 			print("Silencer button clicked.") ;
 			main.score -= silencerCost;
+			silencerEquipped = true ;
 
 		}
 
-		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowTwoBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "ACOG Scope")) && (main.score >= ACOGCost)) {
+		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowTwoBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "ACOG Scope \n 25 Toast")) && (main.score >= ACOGCost)) {
 			print("ACOG Scope button clicked.") ;
 			main.score -= ACOGCost ;
+			ACOGEquipped = true; 
 			
 		}
 
-		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowThreeBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Red Dot Sight")) && (main.score >= redDotSightCost)) {
+		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowThreeBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Red Dot Sight \n 50 Toast")) && (main.score >= redDotSightCost)) {
 			print("Red Dot Sight button clicked.") ;
 			main.score -= redDotSightCost ;
+			redDotSightEquipped = true ;
 
 		}
 
-		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowFourBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Extended Slots")) && (main.score >= extendedSlotsCost)) {
+		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowFourBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Extended Slots \n 100 Toast")) && (main.score >= extendedSlotsCost)) {
 			print("Extended Slots button clicked.") ;
 			main.score -= extendedSlotsCost ;
+			extendedSlotsEquipped = true ;
 
 		}
 		
-		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowFiveBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Hotter Element")) && (main.score >= hotterElementCost)) {
+		if ((GUI.Button (new Rect (columnOneBtnWidthSpacer, rowFiveBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Hotter Element \n 200 Toast")) && (main.score >= hotterElementCost)) {
 			print("Hotter Element button clicked.") ;
 			main.score -= hotterElementCost;
+			hotterElementEquipped = true ;
 
 		}
 
-		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowOneBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Diamond Camo")) && (main.score >= diamondCamoCost)) {
+		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowOneBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Diamond Camo \n 500 Toast")) && (main.score >= diamondCamoCost)) {
 			print("Diamond Camo button clicked.") ;
 			main.score -= diamondCamoCost;
+			diamondCamoEquipped = true;
 
 		}
 		
-		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowTwoBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "White Party Hat")) && (main.score >= whitePartyHatCost)) {
+		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowTwoBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "White Party Hat \n 1'000 Toast")) && (main.score >= whitePartyHatCost)) {
 			print("White Party Hat button clicked.") ;
 			main.score -= whitePartyHatCost;
+			whitePartyHatEquipped = true ;
 
 		}
 		
-		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowThreeBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Powerful Spring")) && (main.score >= powerfulSpringCost)) {
+		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowThreeBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Powerful Spring \n 2'500 Toast")) && (main.score >= powerfulSpringCost)) {
 			print("Powerful Spring button clicked.") ;
 			main.score -= powerfulSpringCost;
+			powerfulSpringEquipped = true ;
 
 		}
 		
-		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowFourBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Extra Toaster")) && (main.score >= extraToasterCost)) {
+		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowFourBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Extra Toaster \n 7'500 Toast")) && (main.score >= extraToasterCost)) {
 			print("Extra Toaster button clicked.") ;
 			main.score -= extraToasterCost;
+			extraToasterEquipped = true ;
 
 		}
 		
-		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowFiveBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Flamethrower")) && (main.score >= flamethrowerCost)) {
+		if ((GUI.Button (new Rect (columnTwoBtnWidthSpacer, rowFiveBtnHeightSpacer, upgradebtnWidth, upgradebtnHeight), "Flamethrower \n 25'000 Toast")) && (main.score >= flamethrowerCost)) {
 			print("Flamethrower button clicked.") ;
 			main.score -= flamethrowerCost;
+			flamethrowerEquipped = true ;
 
 		}
 
