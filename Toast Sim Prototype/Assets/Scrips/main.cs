@@ -2,9 +2,9 @@
 //
 // 1. Score
 /////////////////// 1.1 add to score
-// 1.2 location depenent score
-/////////////////// 1.3 remove score purches 
-// 1.4 Make score not reset when move from main screen to upgrades
+// 1.2 location dependent score
+/////////////////// 1.3 remove score after purchases 
+///////////////////1.4 Make score not reset when move from main screen to upgrades
 //
 // 2. Need toaster Model 
 // 2.1 Murder Harry
@@ -13,8 +13,8 @@
 // 3.1 Toast to pop when toasted 
 // 3.2 Toaster Plunger to go down when toasting
 // 
-// 4. Basic upgrade / upgrade screen
-// 4.1 Make upgrades affet the game
+// 4. Basic upgrades / upgrade screen
+// 4.1 Make upgrades affect the game
 // 
 // 5.Get backgrounds for images
 // 
@@ -161,15 +161,11 @@ public class main : MonoBehaviour {
 	{
 		const int buttonWidth = 84;
 		const int buttonHeight = 60;
+		const int buttonSpacer = 10;
 		
 		// Determine the button's place on screen
 		// Center in X, 2/3 of the height in Y
-		Rect buttonRect = new Rect(
-			Screen.width / 2 - (buttonWidth / 2),
-			(2 * Screen.height / 3) - (buttonHeight / 2),
-			buttonWidth,
-			buttonHeight
-			);
+		Rect buttonRect = new Rect((Screen.width - (buttonWidth + buttonSpacer)),buttonSpacer, buttonWidth ,buttonHeight);
 		
 		// Draw a button to start the game
 		if(GUI.Button(buttonRect,"Upgrades"))
