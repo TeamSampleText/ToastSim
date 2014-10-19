@@ -16,6 +16,17 @@ public class upgrademenu : MonoBehaviour
 	private static bool isExtraToasterAvailable = true;
 	private static bool isFlamethrowerAvailable = true;
 
+	public static bool silencerEquipped = false;
+	public static bool ACOGEquipped = false;
+	public static bool redDotSightEquipped = false;
+	public static bool extendedSlotsEquipped = false;
+	public static bool hotterElementEquipped = false;
+	public static bool diamondCamoEquipped = false;
+	public static bool whitePartyHatEquipped = false;
+	public static bool powerfulSpringEquipped = false;
+	public static bool extraToasterEquipped = false;
+	public static bool flamethrowerEquipped = false;
+
 
 	void OnGUI()
 	{
@@ -45,17 +56,6 @@ public class upgrademenu : MonoBehaviour
 		const int powerfulSpringCost = 2500;
 		const int extraToasterCost = 7500;
 		const int flamethrowerCost = 20000;
-
-		bool silencerEquipped = false ;
-		bool ACOGEquipped = false;
-		bool redDotSightEquipped = false;
-		bool extendedSlotsEquipped = false;
-		bool hotterElementEquipped = false;
-		bool diamondCamoEquipped = false;
-		bool whitePartyHatEquipped = false;
-		bool powerfulSpringEquipped = false;
-		bool extraToasterEquipped = false;
-		bool flamethrowerEquipped = false;
 
 
 		if (GUI.Button (new Rect (Screen.width - (backbtnWidth + backbtnSpacer),Screen.height - (backbtnHeight + backbtnSpacer), backbtnWidth, backbtnHeight), "Back")) {

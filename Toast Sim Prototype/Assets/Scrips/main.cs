@@ -14,7 +14,7 @@
 // 3.2 Toaster Plunger to go down when toasting
 // 
 /////////////////// 4. Basic upgrades / upgrade screen
-// 4.1 Make upgrades affect the game
+// :( 4.1 Make upgrades affect the game
 // 
 // 5.Get backgrounds for images
 // 
@@ -43,7 +43,7 @@ using System.Collections;
 
 
 public class main : MonoBehaviour {
-	public static int score  = 000000;
+	public static int score  = 0;
 	public Transform Toast;
 	
 	public GameObject Toaster_obj; 
@@ -57,15 +57,36 @@ public class main : MonoBehaviour {
 	private bool toastMake = false;
 	public  GUIText score_txt;
 	private int toastCount = 0;
-
-
+	
 	private int totalToast = 0 ;
+
+	bool silencerCheck = upgrademenu.silencerEquipped ;
+	bool ACOGCheck = upgrademenu.ACOGEquipped;
+	bool redDotSightCheck = upgrademenu.redDotSightEquipped;
+	bool extendedSlotsCheck = upgrademenu.extendedSlotsEquipped;
+	bool hotterElementCheck = upgrademenu.hotterElementEquipped;
+	bool diamondCamoCheck = upgrademenu.diamondCamoEquipped;
+	bool whitePartyHat = upgrademenu.whitePartyHatEquipped;
+	bool powerfulSpringCheck = upgrademenu.powerfulSpringEquipped;
+	bool extraToasterCheck = upgrademenu.extraToasterEquipped;
+	bool flamethrowerCheck = upgrademenu.flamethrowerEquipped;
+
+
+	private const int upgradeHeightSpacer = 300;
+	private const int upgradeBoxWidth = 200;
+	private const int upgradeBoxHeight = 300;
+	private const int Spacer = 10;
+
+
 	// Use this for initialization
 	void Start () {
 		
 		//print ("Starting: " + Time.time);
 		
 		score_txt.text = "Score: " + score;
+
+
+
 	}
 	
 	// Update is called once per frame
@@ -136,7 +157,7 @@ public class main : MonoBehaviour {
 			//First, create a variable to old script e.g
 //			Toast_object script = Toast_object.GetComponent<Toast_object>();
 	//			script.
-			
+		
 			//toast_obj.gameObject.tag = "Toast "+ toastCount;
 			//print("Toast made " + Toast.tag);
 			timerToast = 0;
@@ -163,12 +184,74 @@ public class main : MonoBehaviour {
 	{
 		const int buttonWidth = 84;
 		const int buttonHeight = 60;
-		const int buttonSpacer = 10;
+
+
+
+		//upgrademenu silencerCheck = upgrademenu.GetComponent<upgrademenu>();
+		//if(silencerCheck.GetComponent.
 		
 		// Determine the button's place on screen
 		// Center in X, 2/3 of the height in Y
-		Rect buttonRect = new Rect((Screen.width - (buttonWidth + buttonSpacer)),buttonSpacer, buttonWidth ,buttonHeight);
+		Rect buttonRect = new Rect((Screen.width - (buttonWidth + Spacer)), Spacer, buttonWidth ,buttonHeight);
+		GUI.Label (new Rect (Spacer,upgradeHeightSpacer,upgradeBoxWidth,upgradeBoxHeight), "<color=#000000ff>Upgrades Purchased:</color>");
+
+		if (silencerCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n<color=#000000ff>Silencer</color>");
+		}
+
+		if (ACOGCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n<color=#000000ff>ACOG Scope</color>");
+		}
+
+		if (redDotSightCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n<color=#000000ff>Red Dot Sight</color>");
+		}
+
+		if (extendedSlotsCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n<color=#000000ff>Extended Slots</color>");
+		}
+
+		if (hotterElementCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n<color=#000000ff>Hotter Element</color>");
+		}
+
+		if (diamondCamoCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n<color=#000000ff>Diamond Camo</color>");
+		}
+
+		if (whitePartyHat == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n\n<color=#000000ff>White Party Hat</color>");
+		}
+
+		if (powerfulSpringCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n\n\n<color=#000000ff>Powerful Spring</color>");
+		}
 		
+		if (extraToasterCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n\n\n\n<color=#000000ff>Extra Toaster</color>");
+		}
+		
+		if (flamethrowerCheck == true) {
+			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n\n\n\n\n<color=#000000ff>Flamethrower</color>");
+		}
+		//if(silencerCheck == true){ 
+		//	print("silencerCheck: " + silencerCheck) ;
+		//	GUI.Box (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "Current Upgrades: \nSilencer");
+		//}
+
+		//if (ACOGCheck == true) {
+		//	print ("ACOGCheck: " + ACOGCheck);
+			//if (GUI.Box (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "Current Upgrades: \nSilencer")) {
+			//	print ("bamnandsadsadc") ;
+			//}
+
+		//	GUI.Box (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "Current Upgrades \n ACOG Scope");
+		//}
+
+
+
+
+
 		// Draw a button to start the game
 		if(GUI.Button(buttonRect,"Upgrades"))
 		{
@@ -176,7 +259,6 @@ public class main : MonoBehaviour {
 			// "Stage1" is the name of the first scene we created.
 			Application.LoadLevel("upgrademenu");
 		}
-
 
 
 	}

@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\upgrademenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\main.cs">
     <Files>
-      <File FileName="Assets\Scrips\upgrademenu.cs" Line="130" Column="37" />
-      <File FileName="Assets\Scrips\main.cs" Line="93" Column="18" />
+      <File FileName="Assets\Scrips\main.cs" Line="223" Column="127" />
+      <File FileName="Assets\Scrips\upgrademenu.cs" Line="58" Column="38" />
       <File FileName="Assets\Scrips\Toaster.cs" Line="1" Column="1" />
       <File FileName="Assets\Scrips\Toast_object.cs" Line="1" Column="1" />
     </Files>
