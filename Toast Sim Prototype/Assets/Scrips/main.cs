@@ -66,7 +66,7 @@ public class main : MonoBehaviour {
 	bool extendedSlotsCheck = upgrademenu.extendedSlotsEquipped;
 	bool hotterElementCheck = upgrademenu.hotterElementEquipped;
 	bool diamondCamoCheck = upgrademenu.diamondCamoEquipped;
-	bool whitePartyHat = upgrademenu.whitePartyHatEquipped;
+	bool whitePartyHatCheck = upgrademenu.whitePartyHatEquipped;
 	bool powerfulSpringCheck = upgrademenu.powerfulSpringEquipped;
 	bool extraToasterCheck = upgrademenu.extraToasterEquipped;
 	bool flamethrowerCheck = upgrademenu.flamethrowerEquipped;
@@ -219,7 +219,7 @@ public class main : MonoBehaviour {
 			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n<color=#000000ff>Diamond Camo</color>");
 		}
 
-		if (whitePartyHat == true) {
+		if (whitePartyHatCheck == true) {
 			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n\n<color=#000000ff>White Party Hat</color>");
 		}
 
@@ -234,22 +234,6 @@ public class main : MonoBehaviour {
 		if (flamethrowerCheck == true) {
 			GUI.Label (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "\n\n\n\n\n\n\n\n\n\n<color=#000000ff>Flamethrower</color>");
 		}
-		//if(silencerCheck == true){ 
-		//	print("silencerCheck: " + silencerCheck) ;
-		//	GUI.Box (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "Current Upgrades: \nSilencer");
-		//}
-
-		//if (ACOGCheck == true) {
-		//	print ("ACOGCheck: " + ACOGCheck);
-			//if (GUI.Box (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "Current Upgrades: \nSilencer")) {
-			//	print ("bamnandsadsadc") ;
-			//}
-
-		//	GUI.Box (new Rect (Spacer, upgradeHeightSpacer, upgradeBoxWidth, upgradeBoxHeight), "Current Upgrades \n ACOG Scope");
-		//}
-
-
-
 
 
 		// Draw a button to start the game
@@ -263,10 +247,3 @@ public class main : MonoBehaviour {
 
 	}
 }
-
-
-
-
-
-
-
