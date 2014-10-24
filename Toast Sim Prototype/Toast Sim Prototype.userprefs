@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scrips\main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\main.cs">
     <Files>
-      <File FileName="Assets\Scrips\Toaster.cs" Line="16" Column="2" />
-      <File FileName="Assets\Scrips\main.cs" Line="99" Column="15" />
-      <File FileName="Assets\Scrips\upgrademenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scrips\Toast_object.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\main.cs" Line="142" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

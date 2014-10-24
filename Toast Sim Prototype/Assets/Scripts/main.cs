@@ -51,9 +51,9 @@ public class main : MonoBehaviour {
 	private float toastX = 0;
 	private float toastZ = 0;
 	private float toastY = 0;
-	private int toastwait = 1;
-	private int timerToast = 0;
-	private int testtime = 2 ;
+	private int maxToastingTime = 10;
+	private int startToastingTime = 0;
+	private int testToastingTime = 2 ;
 	private bool toastMake = false;
 	public  GUIText score_txt;
 	private int toastCount = 0;
@@ -70,6 +70,8 @@ public class main : MonoBehaviour {
 	bool powerfulSpringCheck = upgrademenu.powerfulSpringEquipped;
 	bool extraToasterCheck = upgrademenu.extraToasterEquipped;
 	bool flamethrowerCheck = upgrademenu.flamethrowerEquipped;
+
+	private bool stopSilencerSpam = false ;
 
 
 	private const int upgradeHeightSpacer = 300;
@@ -124,21 +126,25 @@ public class main : MonoBehaviour {
 	}
 	
 	IEnumerator  timer() {
+
+		if((silencerCheck == true)&&(stopSilencerSpam == false)){
+			maxToastingTime /= 2 ;
+			stopSilencerSpam = true ;
+		}
 		
 		if(toastMake == false && Toaster.toasterclicked == true){
-			
-			
-			for (; timerToast < testtime; timerToast++) {
+
+			for (startToastingTime = 0; startToastingTime < maxToastingTime; startToastingTime++) {
 				
 				toastMake = true;
 				
-				print ("Timer: " + timerToast);
+				print ("Timer: " + startToastingTime);
 				
 				Toaster.toasterclicked = false;
+
+				yield return new WaitForSeconds(1);
 				
-				//Pop toast
-				
-				yield return new WaitForSeconds(toastwait);
+				//Pop toast		
 				
 			}
 			
@@ -160,7 +166,7 @@ public class main : MonoBehaviour {
 		
 			//toast_obj.gameObject.tag = "Toast "+ toastCount;
 			//print("Toast made " + Toast.tag);
-			timerToast = 0;
+			startToastingTime = 0;
 			toastMake = false;
 		}
 		
