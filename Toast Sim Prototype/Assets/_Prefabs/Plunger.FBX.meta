@@ -1,20 +1,13 @@
 fileFormatVersion: 2
-guid: 2e8275881159df348b88e5aa934f877c
+guid: 69328e4bc956c87488b9a5412f970a0a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: Lever001
-    100002: Toaster001
-    100004: //RootNode
-    400000: Lever001
-    400002: Toaster001
-    400004: //RootNode
-    2300000: Lever001
-    2300002: Toaster001
-    3300000: Lever001
-    3300002: Toaster001
-    4300000: Toaster001
-    4300002: Lever001
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Lever001
     7400000: Take 001
     9500000: //RootNode
   materials:
