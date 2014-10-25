@@ -6,6 +6,10 @@ public class Toast_object : MonoBehaviour {
 	
 	public GameObject toast;
 	public static bool toastClicked = false;
+
+
+
+
 	void OnMouseDown() {
 		toastClicked = true;
 		Destroy (gameObject);
@@ -14,14 +18,26 @@ public class Toast_object : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
 		
+
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void Update(){
+	
+	//	if (main.toastPop == true) {
+	//		rigidbody.AddForce (XForce, YForce, ZForce);
+	//		main.toastPop = false;
+	//	}
+
+
 	}
+
+	void FixedUpdate () {
 	
-	
+
+	}
+
 	
 }

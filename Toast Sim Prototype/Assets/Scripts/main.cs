@@ -51,7 +51,7 @@ public class main : MonoBehaviour {
 	private float toastX = 0;
 	private float toastZ = 0;
 	private float toastY = 0;
-	private int maxToastingTime = 10;
+	private int maxToastingTime = 2;
 	private int startToastingTime = 0;
 	private int testToastingTime = 2 ;
 	private bool toastMake = false;
@@ -73,13 +73,16 @@ public class main : MonoBehaviour {
 
 	private bool stopSilencerSpam = false ;
 
+	public static bool toastPop = false;
 
 	private const int upgradeHeightSpacer = 300;
 	private const int upgradeBoxWidth = 200;
 	private const int upgradeBoxHeight = 300;
 	private const int Spacer = 10;
 
-
+	public float YForce = 400;
+	public float XForce = 400;
+	public float ZForce = 400;
 	// Use this for initialization
 	void Start () {
 		
@@ -99,7 +102,7 @@ public class main : MonoBehaviour {
 		StartCoroutine(timer());
 		toastX = 0;
 		toastY = 1.1f;
-		toastZ = 0;
+		toastZ = -0.2f;
 
 		
 		if (Toast_object.toastClicked == true) {
@@ -133,7 +136,8 @@ public class main : MonoBehaviour {
 		}
 		
 		if(toastMake == false && Toaster.toasterclicked == true){
-
+			GameObject newToast;
+			newToast = Instantiate(Toast, new Vector3(toastX,toastY,toastZ), Quaternion.identity) as GameObject;
 			for (startToastingTime = 0; startToastingTime < maxToastingTime; startToastingTime++) {
 				
 				toastMake = true;
@@ -144,17 +148,20 @@ public class main : MonoBehaviour {
 
 				yield return new WaitForSeconds(1);
 				
-				//Pop toast		
-				
+				//Pop toast
+
 			}
-			
-			print("X pos: "+Toaster_obj.transform.position.x + "y pos: "+ Toaster.ToasterY);
+
+			toastPop = true;
+			if (toastPop == true) {
+				rigidbody.AddForce (XForce, YForce, ZForce);
+				toastPop = false;
+			}
 			Toaster.toasterclicked = false;
 			toastCount++;
-			GameObject newToast;
-			newToast = Instantiate(Toast, new Vector3(toastX,toastY,toastZ-0.2f), Quaternion.identity) as GameObject;
-			//newToast.tag = "toast" + toastCount ;
-			
+
+
+		
 			GameObject RandomTestToaster;
 //			RandomTestToaster = GameObject.FindGameObjectWithTag("toaster");
 			
@@ -169,8 +176,27 @@ public class main : MonoBehaviour {
 			startToastingTime = 0;
 			toastMake = false;
 		}
-		
+	
 	}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	void TestremoveScore()
 	{
@@ -251,5 +277,7 @@ public class main : MonoBehaviour {
 		}
 
 
+	
 	}
+
 }
