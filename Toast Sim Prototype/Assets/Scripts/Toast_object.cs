@@ -21,7 +21,9 @@ public class Toast_object : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		XForce = Random.Range (-25, 25);
+		YForce = Random.Range (640, 850);
+		ZForce = Random.Range (-25, 25);
 
 	}
 	
