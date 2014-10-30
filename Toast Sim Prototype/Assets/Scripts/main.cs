@@ -103,18 +103,25 @@ public class main : MonoBehaviour {
 		toastY = 1.1f;
 		toastZ = -0.2f;
 
-		
+		int XVelocity = 0;
+		int ZVelocity = 0;
+		int YVelocity = 0;
+
 		if (Toast_object.toastClicked == true) {
 			//	print (currentToast.transform.position.y);
 
-			if (tag.Contains("toast") ){
+			if (Toast_object.toastVelocity.y  > 0  ){
 				//Do toasty shit
-				if(gameObject.transform.position.y <= 0.4f){
+
 					score+=3;
-					totalToast++;
+				totalToast++;}
+			else if (Toast_object.toastVelocity.y  < 0 )
+				{
+				score += 2;
+				totalToast++;
 				}
-			}else{
-				score++;
+			else{
+				score ++;
 				totalToast++;
 			}
 

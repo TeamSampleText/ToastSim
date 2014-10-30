@@ -6,7 +6,7 @@ public class Toast_object : MonoBehaviour {
 	
 	public GameObject toast;
 	public static bool toastClicked = false;
-
+	public static Vector3 toastVelocity ;
 
 	public float XForce = 0;
 	public float YForce = 0;
@@ -28,8 +28,8 @@ public class Toast_object : MonoBehaviour {
 	}
 	
 	void Update(){
-	
-	
+
+		toastVelocity = getVelocity ();
 
 	}
 
@@ -41,6 +41,14 @@ public class Toast_object : MonoBehaviour {
 		}
 
 
+	}
+
+	Vector3 getVelocity(){
+
+		Rigidbody toastSpeed = GetComponent<Rigidbody>();
+		Vector3 toastVelocity = toastSpeed.velocity;
+	
+		return toastVelocity;
 	}
 
 	
