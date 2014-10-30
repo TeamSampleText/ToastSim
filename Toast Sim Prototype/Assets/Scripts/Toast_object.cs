@@ -8,7 +8,9 @@ public class Toast_object : MonoBehaviour {
 	public static bool toastClicked = false;
 
 
-
+	public float XForce = 400;
+	public float YForce = 0;
+	public float ZForce = 0;
 
 	void OnMouseDown() {
 		toastClicked = true;
@@ -19,23 +21,23 @@ public class Toast_object : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		
 
 
 	}
 	
 	void Update(){
 	
-	//	if (main.toastPop == true) {
-	//		rigidbody.AddForce (XForce, YForce, ZForce);
-	//		main.toastPop = false;
-	//	}
-
+	
 
 	}
 
 	void FixedUpdate () {
-	
+		if (main.toastPop) {
+			print(main.toastPop);
+			rigidbody.AddForce (XForce, YForce, ZForce);
+			
+		}
+
 
 	}
 

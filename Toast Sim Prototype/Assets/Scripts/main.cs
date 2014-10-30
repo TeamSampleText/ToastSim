@@ -6,7 +6,7 @@
 /////////////////// 1.3 remove score after purchases 
 /////////////////// 1.4 Make score not reset when move from main screen to upgrades
 //
-// 2. Need toaster Model 
+//////////////////////////// 2. Need toaster Model 
 // 2.1 Murder Harry
 // 
 // 3. Phyics !
@@ -73,16 +73,14 @@ public class main : MonoBehaviour {
 
 	private bool stopSilencerSpam = false ;
 
-	public static bool toastPop = false;
+	static public bool toastPop = false;
 
 	private const int upgradeHeightSpacer = 300;
 	private const int upgradeBoxWidth = 200;
 	private const int upgradeBoxHeight = 300;
 	private const int Spacer = 10;
 
-	public float YForce = 400;
-	public float XForce = 400;
-	public float ZForce = 400;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -126,6 +124,11 @@ public class main : MonoBehaviour {
 			
 			
 		}
+
+		if (toastPop == true) {
+			
+			toastPop = false;
+		}
 	}
 	
 	IEnumerator  timer() {
@@ -153,10 +156,8 @@ public class main : MonoBehaviour {
 			}
 
 			toastPop = true;
-			if (toastPop == true) {
-				rigidbody.AddForce (XForce, YForce, ZForce);
-				toastPop = false;
-			}
+
+	
 			Toaster.toasterclicked = false;
 			toastCount++;
 
