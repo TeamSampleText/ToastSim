@@ -1,8 +1,8 @@
 ﻿// What we need to do:
 //
-// 1. Score
+/////////////////// 1. Score
 /////////////////// 1.1 add to score
-// 1.2 location dependent score
+/////////////////// 1.2 location dependent score
 /////////////////// 1.3 remove score after purchases 
 /////////////////// 1.4 Make score not reset when move from main screen to upgrades
 //
@@ -11,7 +11,7 @@
 // 
 // 3. Phyics !
 //////////////////////////// 3.1 Toast to pop when toasted 
-// 3.2 Toaster Plunger to go down when toasting
+// 
 // 
 /////////////////// 4. Basic upgrades / upgrade screen
 // :( 4.1 Make upgrades affect the game
@@ -34,7 +34,8 @@
 // 10. BREAD !!!!!!!
 // 10.1 move bread to le toaster 
 //
-
+// 11 Animation 
+// 11.1 Toaster Plunger to go down when toasting
 
 
 using UnityEngine;
