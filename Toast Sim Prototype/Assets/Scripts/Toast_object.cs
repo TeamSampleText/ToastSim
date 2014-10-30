@@ -8,7 +8,7 @@ public class Toast_object : MonoBehaviour {
 	public static bool toastClicked = false;
 
 
-	public float XForce = 400;
+	public float XForce = 0;
 	public float YForce = 0;
 	public float ZForce = 0;
 

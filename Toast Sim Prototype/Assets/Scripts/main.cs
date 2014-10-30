@@ -10,7 +10,7 @@
 // 2.1 Murder Harry
 // 
 // 3. Phyics !
-// 3.1 Toast to pop when toasted 
+//////////////////////////// 3.1 Toast to pop when toasted 
 // 3.2 Toaster Plunger to go down when toasting
 // 
 /////////////////// 4. Basic upgrades / upgrade screen
@@ -51,11 +51,12 @@ public class main : MonoBehaviour {
 	private float toastX = 0;
 	private float toastZ = 0;
 	private float toastY = 0;
-	private int maxToastingTime = 2;
+	private int maxToastingTime = 10;
 	private int startToastingTime = 0;
 	private int testToastingTime = 2 ;
 	private bool toastMake = false;
-	public  GUIText score_txt;
+	public GUIText score_txt;
+	public GUIText timer_txt;
 	private int toastCount = 0;
 	
 	private int totalToast = 0 ;
@@ -87,7 +88,7 @@ public class main : MonoBehaviour {
 		//print ("Starting: " + Time.time);
 		
 		score_txt.text = "Score: " + score;
-
+		timer_txt.text = "Time Remaining: N/A";
 
 
 	}
@@ -142,12 +143,15 @@ public class main : MonoBehaviour {
 			GameObject newToast;
 			newToast = Instantiate(Toast, new Vector3(toastX,toastY,toastZ), Quaternion.identity) as GameObject;
 			for (startToastingTime = 0; startToastingTime < maxToastingTime; startToastingTime++) {
-				
+
+				Toaster.toasterclicked = false;
+
+				timer_txt.text = "Time Remaining: " + (maxToastingTime - startToastingTime) ;
 				toastMake = true;
 				
 				print ("Timer: " + startToastingTime);
 				
-				Toaster.toasterclicked = false;
+
 
 				yield return new WaitForSeconds(1);
 				
@@ -159,6 +163,7 @@ public class main : MonoBehaviour {
 
 	
 			Toaster.toasterclicked = false;
+			timer_txt.text = "Time Remaining: N/A" ;
 			toastCount++;
 
 
@@ -179,24 +184,6 @@ public class main : MonoBehaviour {
 		}
 	
 	}
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	void TestremoveScore()
