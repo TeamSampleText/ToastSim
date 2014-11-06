@@ -8,11 +8,16 @@ public class MainMenu : MonoBehaviour {
 	private int playBtnWidth = 200 ;
 	private int playBtnHeight = 120 ;
 	private int playBtnWidthSpacer = 220 ;
-	//private int playBtnHeightSpacer = 300;
+	private int playBtnHeightSpacer = 200;
+
+	private int quitBtnWidth = 200;
+	private int quitBtnHeight = 50 ;
+	private int quitBtnWidthSpacer = 220;
+	private int quitBtnHeightSpacer = 50;
 
 	// Use this for initialization
 	void Start () {
-		title_txt.text = "Toast Simulator\n2015\n420 MLG Edition";
+
 
 	}
 	
@@ -21,22 +26,21 @@ public class MainMenu : MonoBehaviour {
 	
 	}
 
-	void OnGui(){
+	void OnGUI(){
 
-		Rect PlayButton = new Rect (Screen.width - (playBtnWidth/* + playBtnWidthSpacer*/), Screen.height - (playBtnHeight /*+ playBtnHeightSpacer*/), playBtnWidth, playBtnHeight);
-	
+		title_txt.text = "Toast Simulator\n2015\n420 MLG Edition";
+
+		Rect PlayButton = new Rect (Screen.width - (playBtnWidth + playBtnWidthSpacer), Screen.height - (playBtnHeight + playBtnHeightSpacer), playBtnWidth, playBtnHeight);
+		Rect QuitButton = new Rect (Screen.width - (quitBtnWidth + quitBtnWidthSpacer), Screen.height - (quitBtnHeight + quitBtnHeightSpacer), quitBtnWidth, quitBtnHeight);
 
 		if (GUI.Button (PlayButton, "PLAY GAME")) {
 			print ("PLAY button clicked");
 			Application.LoadLevel("toastsimproto1");
 		}
 
-		if ((GUI.Button (new Rect (2, 2, 2, 2), "Silencer \n 10 Toast")) && (main.score >= 2)) {
-			print("Silencer button clicked.") ;
-				
-				
+		if (GUI.Button (QuitButton, "QUIT")) {
+			Application.Quit ();
 		}
-
-
+		
 	}
 }

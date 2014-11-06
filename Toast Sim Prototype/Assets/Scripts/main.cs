@@ -73,7 +73,7 @@ public class main : MonoBehaviour {
 	bool extraToasterCheck = upgrademenu.extraToasterEquipped;
 	bool flamethrowerCheck = upgrademenu.flamethrowerEquipped;
 
-	private bool stopSilencerSpam = false ;
+	private bool stopSilencerSpam, stopACOGSpam, stopRedDotSightSpam, stopExtendedSlotsSpam, stopHotterElementSpam, stopDiamondCamoSpam, stopWhitePartyHatSpam, stopPowerfulSpringSpam, stopExtraToasterSpam, stopFlamethrowerSpam = false ;
 
 	static public bool toastPop = false;
 
@@ -143,9 +143,33 @@ public class main : MonoBehaviour {
 	IEnumerator  timer() {
 
 		if((silencerCheck == true)&&(stopSilencerSpam == false)){
-			maxToastingTime /= 2 ;
+			maxToastingTime -= 2 ;
 			stopSilencerSpam = true ;
 		}
+		if ((ACOGCheck == true) && (stopACOGSpam == false)) {
+			maxToastingTime -= 2;
+			stopACOGSpam = true;
+		}
+
+		if ((redDotSightCheck == true) && (stopRedDotSightSpam == false)) {
+			maxToastingTime -= 2;
+			stopRedDotSightSpam = true;
+		}
+
+		if ((extendedSlotsCheck == true) && (stopExtendedSlotsSpam == false)) {
+			maxToastingTime -= 2;
+			stopExtendedSlotsSpam = true;
+		}
+
+		if ((hotterElementCheck == true) && (stopHotterElementSpam == false)) {
+			maxToastingTime -= 2;
+			stopHotterElementSpam = true;
+		}
+
+		if (maxToastingTime <= 0) {
+			maxToastingTime = 1;
+		}
+
 		
 		if(toastMake == false && Toaster.toasterclicked == true){
 			GameObject newToast;
@@ -210,8 +234,8 @@ public class main : MonoBehaviour {
 	}
 	void OnGUI()
 	{
-		const int buttonWidth = 84;
-		const int buttonHeight = 60;
+		const int upgradebuttonWidth = 84;
+		const int upgradebuttonHeight = 60;
 
 
 
@@ -220,7 +244,9 @@ public class main : MonoBehaviour {
 		
 		// Determine the button's place on screen
 		// Center in X, 2/3 of the height in Y
-		Rect buttonRect = new Rect((Screen.width - (buttonWidth + Spacer)), Spacer, buttonWidth ,buttonHeight);
+		Rect Upgradebtn = new Rect((Screen.width - (upgradebuttonWidth + Spacer)), Spacer, upgradebuttonWidth ,upgradebuttonHeight);
+		Rect MainMenuBtn = new Rect ((Screen.width - (upgradebuttonWidth + Spacer)), (upgradebuttonHeight + (Spacer * 2)), upgradebuttonWidth, upgradebuttonHeight); 
+
 		GUI.Label (new Rect (Spacer,upgradeHeightSpacer,upgradeBoxWidth,upgradeBoxHeight), "<color=#000000ff>Upgrades Purchased:</color>");
 
 		if (silencerCheck == true) {
@@ -265,13 +291,16 @@ public class main : MonoBehaviour {
 
 
 		// Draw a button to start the game
-		if(GUI.Button(buttonRect,"Upgrades"))
+		if(GUI.Button(Upgradebtn,"Upgrades"))
 		{
 			// On Click, load the first level.
 			// "Stage1" is the name of the first scene we created.
 			Application.LoadLevel("upgrademenu");
 		}
 
+		if (GUI.Button (MainMenuBtn, "Main Menu")) {
+			Application.LoadLevel ("MainMenu");
+		}
 
 	
 	}
