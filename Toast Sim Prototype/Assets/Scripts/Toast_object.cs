@@ -5,6 +5,9 @@ using System.Collections;
 public class Toast_object : MonoBehaviour {
 	
 	public GameObject toast;
+
+
+
 	public static bool toastClicked = false;
 	public static Vector3 toastVelocity ;
 
@@ -15,7 +18,7 @@ public class Toast_object : MonoBehaviour {
 	void OnMouseDown() {
 		toastClicked = true;
 		Destroy (gameObject);
-		
+
 	}
 	
 	// Use this for initialization
@@ -50,6 +53,7 @@ public class Toast_object : MonoBehaviour {
 	
 		return toastVelocity;
 	}
+
 
 	
 }

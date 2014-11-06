@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Toast_object.cs" />
      <Compile Include="Assets\Scripts\Toaster.cs" />
      <Compile Include="Assets\Scripts\main.cs" />
+     <Compile Include="Assets\Scripts\plunger.cs" />
      <Compile Include="Assets\Scripts\upgrademenu.cs" />
      <Compile Include="Assets\camo_menu.cs" />
   </ItemGroup>
