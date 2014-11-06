@@ -6,7 +6,7 @@ public class plunger : MonoBehaviour {
 	public GameObject plunger_obj;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -15,11 +15,17 @@ public class plunger : MonoBehaviour {
 			plunger_down();		
 		}
 	}
+
 	void plunger_down(){
-	
-		Vector3 plungerDown = new Vector3(0,0,-0.1f); 
-		if (transform.position.y > 0.34) {
-			transform.Translate (plungerDown * Time.deltaTime);
+		while(transform.position.y>0.35f){
+		
+						Vector3 plungerDown = new Vector3 (0, 0, -0.1f); 
+						if (transform.position.y > 0.34) {
+								transform.Translate (plungerDown * Time.deltaTime);
+						}
+
+			new WaitForSeconds(5);
 		}
 	}
+
 }
